@@ -1,0 +1,60 @@
+.todo-list {
+    text-align: center;
+}
+
+.border {
+    border: 1px solid  #aaa;
+    border-radius: 1rem;
+}
+
+.hover {
+    cursor: pointer;
+    height: 5rem;
+}
+
+.modal {
+    display: flex;
+    align-items:  center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #fff;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 2rem;
+    box-shadow: 0 5px 10px 2px #535353;
+}
+
+.modal:focus,
+.modal:active,
+.modal {
+    border: none;
+}
+
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center:focus,
+.center:active, 
+.center {
+    border: none;
+}
+
+.singleLine {
+    display: flex;
+    justify-content: center;
+}
+
+.align {
+    /* width: 40rem; */
+    height: 2rem;
+}
+
+/* @media screen and (min-width: 480px) {
+    body {
+      background-color: lightgreen;
+    }
+} */
