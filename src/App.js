@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
+
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [todos, setTodos] = useState(['Take dogs for a walk', 'Take trash out', 'study js']);
+    const [input, setInput] = useState('');
+
+    const addTodo = (event) => {
+        event.preventDefault();
+        setTodos([...todos, input]);
+        setInput('');
+    }
+
+    return ( 
+        <div className = "App" >
+            <h1>Todo List</h1>
+            <form>
+                {/* <input value={input} onChange={event => setInput(event.target.value)} /> */}
+                <FormControl>
+                    <InputLabel >Write a Todo</InputLabel>
+                    <Input value={input} onChange={event => setInput(event.target.value)}/>
+                </FormControl>
+                
+                <Button disabled={!input} type="submit" onClick={addTodo} variant="contained" color="primary">
+                    Add Todo
+                </Button>
+                {/* <button type="submit" onClick={addTodo}>Add Todo</button> */}
+            </form>
+
+
+            <ul>
+                {todos.map(todo => (
+                    <li>{todo}</li>
+                ))}
+            </ul>
+        </div>
+    );
 }
 
 export default App;
